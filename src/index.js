@@ -9,8 +9,6 @@ class App extends React.Component {
     console.log('changed, value:', value);
   };
 
-  
-
   render() {
     const items = [
       {
