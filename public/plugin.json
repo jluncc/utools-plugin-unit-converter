@@ -1,0 +1,21 @@
+{
+	"main": "/index.html",
+	"preload": "preload.js",
+	"logo": "utools-plugin-unit-converter-logo.png",
+	"version": "0.0.1",
+	"features": [
+		{
+			"code": "core",
+			"explain": "时间，字节等数值单位转换器",
+			"cmds": [
+				"单位转换"
+			]
+		}
+	],
+	"pluginSetting": {
+    "single": false
+	},
+	"development": {
+		"main": "http://127.0.0.1:3000/index.html"
+	}
+}
