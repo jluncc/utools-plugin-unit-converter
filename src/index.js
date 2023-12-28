@@ -24,12 +24,14 @@ class App extends React.Component {
     ];
 
     return (
-      <Tabs 
-        defaultActiveKey="time" 
-        items={items} 
-        onChange={this.onChange.bind(this)}
-      >  
-      </Tabs>
+      <div style={{padding: '1% 5%'}}>
+        <Tabs 
+          defaultActiveKey="time" 
+          items={items} 
+          onChange={this.onChange.bind(this)}
+        >  
+        </Tabs>
+      </div>
     )
   }
 }

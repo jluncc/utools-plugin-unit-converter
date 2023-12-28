@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, InputNumber } from 'antd';
+import { Form, InputNumber, Divider } from 'antd';
 
 export class ByteUnitConverter extends React.Component {
   state = {
@@ -78,60 +78,70 @@ export class ByteUnitConverter extends React.Component {
 
   render() {
     return (
-      <Form
-        name="byte-unit-converter"
-        style={{ width: '100%' }}
-        align="center"
-      > 
-        <Form.Item>
-          <InputNumber 
+      <div>
+        <Form
+          name="byte-unit-converter"
+          style={{ width: '100%' }}
+          align="center"
+        > 
+          <Form.Item>
+            <InputNumber 
+                style={{ width: '100%' }} 
+                addonAfter="位 / 比特（b）" 
+                value={this.state.bVal}
+                min={0}
+                onChange={this.reCalculate.bind(this, 'b')} /> 
+          </Form.Item>
+          <Form.Item>
+            <InputNumber 
               style={{ width: '100%' }} 
-              addonAfter="位 / 比特（b）" 
-              value={this.state.bVal}
+              addonAfter="字节（B）" 
+              value={this.state.BVal}
               min={0}
-              onChange={this.reCalculate.bind(this, 'b')} /> 
-        </Form.Item>
-        <Form.Item>
-          <InputNumber 
-            style={{ width: '100%' }} 
-            addonAfter="字节（B）" 
-            value={this.state.BVal}
-            min={0}
-            onChange={this.reCalculate.bind(this, 'B')} />
-        </Form.Item>
-        <Form.Item>
-          <InputNumber 
-            style={{ width: '100%' }} 
-            addonAfter="千字节（KB）"
-            value={this.state.KBVal}
-            min={0}
-            onChange={this.reCalculate.bind(this, 'KB')} />
-        </Form.Item>
-        <Form.Item>
-          <InputNumber 
-            style={{ width: '100%' }} 
-            addonAfter="兆字节（MB）" 
-            value={this.state.MBVal}
-            min={0}
-            onChange={this.reCalculate.bind(this, 'MB')} />
-        </Form.Item>
-        <Form.Item>
-          <InputNumber 
-            style={{ width: '100%' }} 
-            addonAfter="吉字节（GB）" 
-            value={this.state.GBVal}
-            min={0}
-            onChange={this.reCalculate.bind(this, 'GB')} />
-        </Form.Item>
-        <Form.Item>
-          <InputNumber 
-            style={{ width: '100%' }} 
-            addonAfter="太字节（TB）" 
-            value={this.state.TBVal}
-            min={0}
-            onChange={this.reCalculate.bind(this, 'TB')} />
-        </Form.Item>
-      </Form>
+              onChange={this.reCalculate.bind(this, 'B')} />
+          </Form.Item>
+          <Form.Item>
+            <InputNumber 
+              style={{ width: '100%' }} 
+              addonAfter="千字节（KB）"
+              value={this.state.KBVal}
+              min={0}
+              onChange={this.reCalculate.bind(this, 'KB')} />
+          </Form.Item>
+          <Form.Item>
+            <InputNumber 
+              style={{ width: '100%' }} 
+              addonAfter="兆字节（MB）" 
+              value={this.state.MBVal}
+              min={0}
+              onChange={this.reCalculate.bind(this, 'MB')} />
+          </Form.Item>
+          <Form.Item>
+            <InputNumber 
+              style={{ width: '100%' }} 
+              addonAfter="吉字节（GB）" 
+              value={this.state.GBVal}
+              min={0}
+              onChange={this.reCalculate.bind(this, 'GB')} />
+          </Form.Item>
+          <Form.Item>
+            <InputNumber 
+              style={{ width: '100%' }} 
+              addonAfter="太字节（TB）" 
+              value={this.state.TBVal}
+              min={0}
+              onChange={this.reCalculate.bind(this, 'TB')} />
+          </Form.Item>
+        </Form>
+        <Divider orientation="left" orientationMargin="0" plain>字节单位换算表</Divider>
+        <div>
+          <p>1 太字节（TB） = 1024 吉字节（GB）</p>
+          <p>1 吉字节（GB） = 1024 兆字节（MB）</p>
+          <p>1 兆字节（MB） = 1024 千字节（KB）</p>
+          <p>1 千字节（KB） = 1024 字节（B）</p>
+          <p>1 字节（B） = 8 位 / 比特（b）</p>
+        </div>
+      </div>
     )
   }
 }
